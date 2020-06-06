@@ -8,50 +8,44 @@ class RadioTest {
     @Test
     public void nextRadioStation() {
         Radio radio = new Radio();
-        radio.nextRadioStation();
-        int expected = 8;
-        int actual = radio.getCurrentRadioStation();
+        radio.setCurrentRadioStation(9);
+        radio.setCurrentRadioStation(radio.getCurrentRadioStation() +1);
 
-        assertEquals(expected, actual);
+        assertEquals(0, radio.getCurrentRadioStation());
     }
 
     @Test
     public void prevRadioStation() {
         Radio radio = new Radio();
-        radio.prevRadioStation();
-        int expected = 6;
-        int actual = radio.getCurrentRadioStation();
+        radio.setCurrentRadioStation(0);
+        radio.setCurrentRadioStation(radio.getCurrentSoundVolume() -1);
 
-        assertEquals(expected, actual);
+        assertEquals(9, radio.getCurrentRadioStation());
     }
 
     @Test
     public void inputRadioStation() {
         Radio radio = new Radio();
-        radio.inputRadioStation();
-        int expected = 7;
-        int actual = radio.getCurrentRadioStation();
+        radio.setCurrentRadioStation(7);
 
-        assertEquals(expected,actual);
+        assertEquals(7, radio.getCurrentRadioStation());
     }
 
     @Test
     public void increaseSoundVolume() {
         Radio radio = new Radio();
-        radio.increaseSoundVolume();
-        int expected = 6;
-        int actual = radio.getCurrentSoundVolume();
+        radio.setCurrentSoundVolume(10);
+        radio.setCurrentSoundVolume(radio.getCurrentSoundVolume() +1);
 
-        assertEquals(expected,actual);
+        assertEquals(10,radio.getCurrentSoundVolume());
     }
 
     @Test
     public void decreaseSoundVolume() {
         Radio radio = new Radio();
-        radio.decreaseSoundVolume();
-        int expected = 4;
-        int actual = radio.getCurrentSoundVolume();
+        radio.setCurrentSoundVolume(0);
+        radio.setCurrentSoundVolume(radio.getCurrentSoundVolume() -1);
 
-        assertEquals(expected,actual);
+        assertEquals(0,radio.getCurrentSoundVolume());
     }
 }
