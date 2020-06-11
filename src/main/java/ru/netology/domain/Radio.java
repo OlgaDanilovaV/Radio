@@ -1,5 +1,12 @@
 package ru.netology.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class Radio {
     private int maxRadioStation = 10;
     private int minRadioStation = 0;
@@ -8,27 +15,6 @@ public class Radio {
     private int minVolume = 0;
     private int currentSoundVolume;
     private boolean on;
-
-    public Radio(int currentRadioStation, int currentSoundVolume) {
-        this.currentRadioStation = currentRadioStation;
-        this.currentSoundVolume = currentSoundVolume;
-    }
-
-    public int getCurrentRadioStation() {
-        return currentRadioStation;
-    }
-
-    public int getCurrentSoundVolume() {
-        return currentSoundVolume;
-    }
-
-    public boolean isOn() {
-        return on;
-    }
-
-    public void setOn(boolean on) {
-        this.on = on;
-    }
 
     public void nextRadioStation() {
 
