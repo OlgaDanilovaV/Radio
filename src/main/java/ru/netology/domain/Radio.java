@@ -1,60 +1,30 @@
 package ru.netology.domain;
 
 public class Radio {
-    private int maxRadioStation;
-    private int minRadioStation;
+    private int maxRadioStation = 10;
+    private int minRadioStation = 0;
     private int currentRadioStation;
-    private int maxVolume;
-    private int minVolume;
+    private int maxVolume = 100;
+    private int minVolume = 0;
     private int currentSoundVolume;
     private boolean on;
 
-    public int getMaxRadioStation() {
-        return maxRadioStation;
-    }
-
-    public void setMaxRadioStation(int maxRadioStation) {
+    public Radio(int maxRadioStation, int minRadioStation, int currentRadioStation, int maxVolume, int minVolume, int currentSoundVolume, boolean on) {
         this.maxRadioStation = maxRadioStation;
-    }
-
-    public int getMinRadioStation() {
-        return minRadioStation;
-    }
-
-    public void setMinRadioStation(int minRadioStation) {
         this.minRadioStation = minRadioStation;
+        this.currentRadioStation = currentRadioStation;
+        this.maxVolume = maxVolume;
+        this.minVolume = minVolume;
+        this.currentSoundVolume = currentSoundVolume;
+        this.on = on;
     }
 
     public int getCurrentRadioStation() {
         return currentRadioStation;
     }
 
-    public void setCurrentRadioStation(int currentRadioStation) {
-        this.currentRadioStation = currentRadioStation;
-    }
-
-    public int getMaxVolume() {
-        return maxVolume;
-    }
-
-    public void setMaxVolume(int maxVolume) {
-        this.maxVolume = maxVolume;
-    }
-
-    public int getMinVolume() {
-        return minVolume;
-    }
-
-    public void setMinVolume(int minVolume) {
-        this.minVolume = minVolume;
-    }
-
     public int getCurrentSoundVolume() {
         return currentSoundVolume;
-    }
-
-    public void setCurrentSoundVolume(int currentSoundVolume) {
-        this.currentSoundVolume = currentSoundVolume;
     }
 
     public boolean isOn() {
@@ -69,7 +39,7 @@ public class Radio {
 
         currentRadioStation ++;
 
-        if (currentRadioStation > 9) {
+        if (currentRadioStation > 10) {
             currentRadioStation = 0;
         }
     }
@@ -79,14 +49,13 @@ public class Radio {
         currentRadioStation --;
 
         if (currentRadioStation < 0) {
-            currentRadioStation = 9;
+            currentRadioStation = 10;
         }
     }
 
-
     public void increaseSoundVolume() {
 
-        if (currentSoundVolume >= 10) {
+        if (currentSoundVolume >= 100) {
             return;
         }
         currentSoundVolume ++;
