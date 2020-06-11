@@ -8,8 +8,7 @@ class RadioTest {
 
     @Test
     public void nextRadioStation() {
-        Radio radio = new Radio(
-                10,0,5,100,0,50,true);
+        Radio radio = new Radio(5,50);
 
         radio.nextRadioStation();
 
@@ -18,8 +17,7 @@ class RadioTest {
 
     @Test
     public void returnNextRadioStation() {
-        Radio radio = new Radio(
-                10,0,10,100,0,50,true);
+        Radio radio = new Radio(10,50);
 
         radio.nextRadioStation();
 
@@ -28,8 +26,7 @@ class RadioTest {
 
     @Test
     public void prevRadioStation() {
-        Radio radio = new Radio(
-                10,0,5,100,0,50,true);
+        Radio radio = new Radio(5,50);
 
         radio.prevRadioStation();
 
@@ -39,8 +36,7 @@ class RadioTest {
     @Test
     public void returnPrevRadioStation() {
 
-        Radio radio = new Radio(
-                10,0,0,100,0,50,true);
+        Radio radio = new Radio(0,50);
 
         radio.prevRadioStation();
 
@@ -49,16 +45,14 @@ class RadioTest {
 
     @Test
     public void inputRadioStation() {
-        Radio radio = new Radio(
-                10,0,7,100,0,50,true);
+        Radio radio = new Radio(7,50);
 
         assertEquals(7, radio.getCurrentRadioStation());
     }
 
     @Test
     public void increaseSoundVolume() {
-        Radio radio = new Radio(
-                10,0,5,100,0,50,true);
+        Radio radio = new Radio(5,50);
 
         radio.increaseSoundVolume();
 
@@ -67,8 +61,7 @@ class RadioTest {
 
     @Test
     public void returnIncreaseSoundVolume() {
-        Radio radio = new Radio(
-                10,0,5,100,0,100,true);
+        Radio radio = new Radio(5,100);
 
         radio.increaseSoundVolume();
 
@@ -77,8 +70,7 @@ class RadioTest {
 
     @Test
     public void decreaseSoundVolume() {
-        Radio radio = new Radio(
-                10,0,5,100,0,50,true);
+        Radio radio = new Radio(5,50);
 
         radio.decreaseSoundVolume();
 
@@ -87,8 +79,7 @@ class RadioTest {
 
     @Test
     public void returnDecreaseSoundVolume() {
-        Radio radio = new Radio(
-                10,0,5,100,0,0,true);
+        Radio radio = new Radio(5,0);
 
         radio.decreaseSoundVolume();
 
