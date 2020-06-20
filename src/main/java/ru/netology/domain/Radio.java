@@ -9,13 +9,42 @@ public class Radio {
     private int currentSoundVolume;
     private boolean on;
 
+    public Radio() {
+    }
+
     public Radio(int currentRadioStation, int currentSoundVolume) {
         this.currentRadioStation = currentRadioStation;
         this.currentSoundVolume = currentSoundVolume;
     }
 
+    public Radio(int maxRadioStation, int currentRadioStation, int currentSoundVolume) {
+        this.maxRadioStation = maxRadioStation;
+        this.currentRadioStation = currentRadioStation;
+        this.currentSoundVolume = currentSoundVolume;
+    }
+
+    public void setCurrentRadioStation(int currentRadioStation) {
+        if (currentRadioStation > maxRadioStation) {
+            return;
+        }
+        if (currentRadioStation < minRadioStation) {
+            return;
+        }
+        this.currentRadioStation = currentRadioStation;
+    }
+
     public int getCurrentRadioStation() {
         return currentRadioStation;
+    }
+
+    public void setCurrentSoundVolume(int currentSoundVolume) {
+        if (currentSoundVolume > maxVolume) {
+            return;
+        }
+        if (currentSoundVolume < minVolume) {
+            return;
+        }
+        this.currentSoundVolume = currentSoundVolume;
     }
 
     public int getCurrentSoundVolume() {
@@ -34,7 +63,7 @@ public class Radio {
 
         currentRadioStation ++;
 
-        if (currentRadioStation > 10) {
+        if (currentRadioStation > maxRadioStation) {
             currentRadioStation = 0;
         }
     }
@@ -43,14 +72,14 @@ public class Radio {
 
         currentRadioStation --;
 
-        if (currentRadioStation < 0) {
+        if (currentRadioStation < minRadioStation) {
             currentRadioStation = 10;
         }
     }
 
     public void increaseSoundVolume() {
 
-        if (currentSoundVolume >= 100) {
+        if (currentSoundVolume >= maxVolume) {
             return;
         }
         currentSoundVolume ++;
@@ -58,7 +87,7 @@ public class Radio {
 
     public void decreaseSoundVolume() {
 
-        if (currentSoundVolume <= 0) {
+        if (currentSoundVolume <= minVolume) {
             return;
         }
         currentSoundVolume --;
