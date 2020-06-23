@@ -64,7 +64,7 @@ public class Radio {
         currentRadioStation ++;
 
         if (currentRadioStation > maxRadioStation) {
-            currentRadioStation = 0;
+            currentRadioStation = minRadioStation;
         }
     }
 
@@ -73,7 +73,7 @@ public class Radio {
         currentRadioStation --;
 
         if (currentRadioStation < minRadioStation) {
-            currentRadioStation = 10;
+            currentRadioStation = maxRadioStation;
         }
     }
 
